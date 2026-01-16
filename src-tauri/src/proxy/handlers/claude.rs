@@ -44,8 +44,31 @@ fn has_valid_signature(block: &ContentBlock) -> bool {
             if thinking.is_empty() && signature.is_some() {
                 return true;
             }
-            // 有内容 + 足够长度的 signature = 有效
-            signature.as_ref().map_or(false, |s| s.len() >= MIN_SIGNATURE_LENGTH)
+            
+            // [FIX #752] 严格验证：签名必须在缓存中
+            if let Some(sig) = signature {
+                // 检查长度
+                if sig.len() < MIN_SIGNATURE_LENGTH {
+                    tracing::debug!("[Signature-Validation] Signature too short: {} chars", sig.len());
+                    return false;
+                }
+                
+                // 检查是否在缓存中
+                let cached_family = crate::proxy::SignatureCache::global().get_signature_family(sig);
+                if cached_family.is_none() {
+                    tracing::warn!(
+                        "[Signature-Validation] Unknown signature origin (len: {}). Rejecting.",
+                        sig.len()
+                    );
+                    return false;
+                }
+                
+                // 签名有效
+                true
+            } else {
+                // 无签名
+                false
+            }
         }
         _ => true  // 非 thinking 块默认有效
     }
