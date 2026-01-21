@@ -3,6 +3,7 @@
 
 use super::models::*;
 use super::utils::to_claude_usage;
+use crate::proxy::mappers::estimation_calibrator::get_calibrator;
 // use crate::proxy::mappers::signature_store::store_thought_signature; // Deprecated
 use crate::proxy::SignatureCache;
 use bytes::Bytes;
@@ -459,7 +460,14 @@ impl StreamingState {
         };
 
         let usage = usage_metadata
-            .map(|u| to_claude_usage(u, self.scaling_enabled, self.context_limit))
+            .map(|u| {
+                // Record actual token usage for calibrator learning
+                if let Some(actual_tokens) = u.prompt_token_count {
+                    get_calibrator().record(0, actual_tokens); // Will be paired with estimate from request
+                    tracing::debug!("[Calibrator] Recorded actual prompt tokens: {}", actual_tokens);
+                }
+                to_claude_usage(u, self.scaling_enabled, self.context_limit)
+            })
             .unwrap_or(Usage {
                 input_tokens: 0,
                 output_tokens: 0,
