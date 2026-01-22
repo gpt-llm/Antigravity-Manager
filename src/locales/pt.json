@@ -776,7 +776,9 @@
             "gemini": "Gemini",
             "claude": "Claude",
             "images": "Imagens",
-            "reset": "Redefinir"
+            "reset": "Redefinir",
+            "by_account": "Filtrar por conta",
+            "all_accounts": "Todas as Contas"
         },
         "table": {
             "status": "Status",

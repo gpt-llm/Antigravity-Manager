@@ -774,7 +774,9 @@
             "gemini": "Gemini",
             "claude": "Claude",
             "images": "Изображения",
-            "reset": "Сброс"
+            "reset": "Сброс",
+            "by_account": "Фильтр по аккаунту",
+            "all_accounts": "Все аккаунты"
         },
         "table": {
             "status": "Статус",

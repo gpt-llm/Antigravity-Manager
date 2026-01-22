@@ -781,7 +781,9 @@
             "gemini": "Gemini",
             "claude": "Claude",
             "images": "Ảnh",
-            "reset": "Đặt lại"
+            "reset": "Đặt lại",
+            "by_account": "Lọc theo tài khoản",
+            "all_accounts": "Tất cả tài khoản"
         },
         "table": {
             "status": "Trạng thái",

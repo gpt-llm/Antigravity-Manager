@@ -751,7 +751,9 @@
             "gemini": "Gemini",
             "claude": "Claude",
             "images": "Görseller",
-            "reset": "Sıfırla"
+            "reset": "Sıfırla",
+            "by_account": "Hesaba göre filtrele",
+            "all_accounts": "Tüm Hesaplar"
         },
         "table": {
             "status": "Durum",
