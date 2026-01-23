@@ -253,6 +253,10 @@ print(response.choices[0].message.content)
         -   **[Optimization] OAuth Communication Quality (Issue #948, #887)**:
             -   **Timeout Extension**: Increased auth request timeouts to 60 seconds to significantly improve token exchange success rates in proxy environments.
             -   **Error Guidance**: Provided clear guidance for Google API connectivity issues, helping users troubleshoot proxy settings.
+        -   **[UX Enhancement] Upstream Proxy Validation & Restart Hint (Contributed by @zhiqianzheng)**:
+            -   **Config Validation**: When the user enables upstream proxy but leaves the URL empty, the save operation is blocked with a clear error message, preventing connection failures due to invalid configuration.
+            -   **Restart Reminder**: After successfully saving proxy settings, users are reminded to restart the app for changes to take effect, reducing troubleshooting time.
+            -   **i18n Support**: Added translations for Simplified Chinese, Traditional Chinese, English, and Japanese.
 
     *   **v3.3.48 (2026-01-21)**:
         -   **[Core Fix] Windows Console Flashing Fix (Fix PR #933)**:

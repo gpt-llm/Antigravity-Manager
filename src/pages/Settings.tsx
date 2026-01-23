@@ -116,9 +116,22 @@ function Settings() {
 
     const handleSave = async () => {
         try {
+            // 校验：如果启用了上游代理但没有填写地址，给出提示
+            const proxyEnabled = formData.proxy?.upstream_proxy?.enabled;
+            const proxyUrl = formData.proxy?.upstream_proxy?.url?.trim();
+            if (proxyEnabled && !proxyUrl) {
+                showToast(t('proxy.config.upstream_proxy.validation_error', '启用上游代理时必须填写代理地址'), 'error');
+                return;
+            }
+
             // 强制开启后台自动刷新，确保联动逻辑生效
             await saveConfig({ ...formData, auto_refresh: true });
             showToast(t('common.saved'), 'success');
+            
+            // 如果修改了代理配置，提示用户需要重启
+            if (proxyEnabled && proxyUrl) {
+                showToast(t('proxy.config.upstream_proxy.restart_hint', '代理配置已保存，重启应用后生效'), 'info');
+            }
         } catch (error) {
             showToast(`${t('common.error')}: ${error}`, 'error');
         }

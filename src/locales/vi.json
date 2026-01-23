@@ -512,7 +512,9 @@
                 "enable": "Bật Upstream Proxy",
                 "url": "URL Proxy",
                 "url_placeholder": "ví dụ: http://127.0.0.1:7890 hoặc socks5://127.0.0.1:7890",
-                "tip": "Hỗ trợ HTTP, HTTPS và SOCKS5."
+                "tip": "Hỗ trợ HTTP, HTTPS và SOCKS5.",
+                "validation_error": "URL proxy là bắt buộc khi bật upstream proxy",
+                "restart_hint": "Cài đặt proxy đã lưu. Khởi động lại ứng dụng để áp dụng thay đổi."
             },
             "scheduling": {
                 "title": "Điều phối & Xoay vòng Tài khoản",

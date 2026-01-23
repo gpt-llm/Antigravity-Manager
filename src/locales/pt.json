@@ -511,7 +511,9 @@
                 "enable": "Habilitar Proxy Upstream",
                 "url": "URL do Proxy",
                 "url_placeholder": "ex: http://127.0.0.1:7890 ou socks5://127.0.0.1:7890",
-                "tip": "Suporta HTTP, HTTPS e SOCKS5."
+                "tip": "Suporta HTTP, HTTPS e SOCKS5.",
+                "validation_error": "URL do proxy é obrigatório quando o proxy upstream está habilitado",
+                "restart_hint": "Configurações de proxy salvas. Reinicie o aplicativo para aplicar as alterações."
             },
             "scheduling": {
                 "title": "Rotação de Conta e Agendamento",

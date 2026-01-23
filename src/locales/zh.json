@@ -517,7 +517,9 @@
                 "enable": "启用上游代理",
                 "url": "代理地址",
                 "url_placeholder": "例如: http://127.0.0.1:7890 或 socks5://127.0.0.1:7890",
-                "tip": "支持 HTTP、HTTPS 和 SOCKS5 协议。"
+                "tip": "支持 HTTP、HTTPS 和 SOCKS5 协议。",
+                "validation_error": "启用上游代理时必须填写代理地址",
+                "restart_hint": "代理配置已保存，重启应用后生效"
             },
             "scheduling": {
                 "title": "账号轮换与会话调度",

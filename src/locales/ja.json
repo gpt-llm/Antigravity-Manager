@@ -529,7 +529,9 @@
                 "enable": "アップストリームプロキシを有効化",
                 "url": "プロキシURL",
                 "url_placeholder": "例: http://127.0.0.1:7890 や socks5://127.0.0.1:7890",
-                "tip": "HTTP, HTTPS, SOCKS5 をサポートしています。"
+                "tip": "HTTP, HTTPS, SOCKS5 をサポートしています。",
+                "validation_error": "プロキシを有効にする場合、プロキシURLは必須です",
+                "restart_hint": "プロキシ設定が保存されました。変更を適用するにはアプリを再起動してください。"
             },
             "scheduling": {
                 "title": "アカウントローテーションとスケジューリング",

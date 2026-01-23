@@ -481,7 +481,9 @@
                 "enable": "Upstream Proxy'yi Etkinleştir",
                 "url": "Proxy URL'si",
                 "url_placeholder": "örn. http://127.0.0.1:7890 veya socks5://127.0.0.1:7890",
-                "tip": "HTTP, HTTPS ve SOCKS5 destekler."
+                "tip": "HTTP, HTTPS ve SOCKS5 destekler.",
+                "validation_error": "Upstream proxy etkinleştirildiğinde proxy URL'si zorunludur",
+                "restart_hint": "Proxy ayarları kaydedildi. Değişiklikleri uygulamak için uygulamayı yeniden başlatın."
             },
             "scheduling": {
                 "title": "Hesap Rotasyonu ve Zamanlama",
